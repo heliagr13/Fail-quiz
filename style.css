@@ -12,6 +12,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 .container {
   width: 1280px;
@@ -24,6 +25,7 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
 }
 .screen {
   display: none;
@@ -38,41 +40,43 @@ body, html {
   font-family: 'Onder', serif;
   font-weight: normal;
   color: white;
+  font-size: clamp(1.3rem, 4vw, 2.2rem);
 }
 .text {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   line-height: 1.4;
   margin-bottom: 20px;
 }
 .intro-text {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 3vw, 1.3rem);
 }
 .question-number {
   font-family: 'Onder', serif;
-  font-size: 0.7rem;
+  font-size: clamp(0.5rem, 1.5vw, 0.7rem);
   margin-bottom: 12px;
   color: #79D66B;
 }
 .question-title {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 3vw, 1.4rem);
   margin-bottom: 10px;
 }
 .question-text {
   margin-bottom: 4px;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
 .lead-bold {
   font-weight: bold;
   margin: 0 0 4px 0;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
 .lead-italic {
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   margin: 0 0 14px 0;
 }
 .option {
   display: block;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   margin: 10px 0;
   cursor: pointer;
 }
@@ -85,8 +89,8 @@ body, html {
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1.1rem;
+  padding: clamp(8px, 1.5vw, 12px) clamp(12px, 3vw, 24px);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   cursor: pointer;
   align-self: flex-start;
   transition: background-color 0.3s ease;
@@ -107,9 +111,9 @@ body, html {
   padding: 12px 20px;
   border-radius: 10px;
   margin-top: 12px;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   box-sizing: border-box;
-  display: none; /* скрываем по умолчанию */
+  display: none;
 }
 
 /* Подсветка правильного варианта (зелёный) */
@@ -135,31 +139,48 @@ body, html {
 }
 
 #screen-result > p#detailed-feedback {
-  order: 0; /* текст фидбека первый */
+  order: 0;
   margin-bottom: 20px;
-  color: white; /* для контраста с фоном */
+  color: white;
 }
 
 #screen-result > button#btn-restart {
-  order: 1; /* кнопка внизу */
-  align-self: flex-start; /* по левому краю */
+  order: 1;
+  align-self: flex-start;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    padding: 30px 40px;
+    border-radius: 16px;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
-    width: 90vw;
+    width: 95vw;
     height: auto;
-    padding: 20px 30px;
+    max-height: 90vh;
+    padding: 20px 25px;
     border-radius: 12px;
   }
-  .title {
-    font-size: 1.8rem;
+}
+
+@media (max-width: 480px) {
+  body, html {
+    align-items: flex-start;
+    padding: 10px 0;
   }
-  .text, .option {
-    font-size: 1rem;
-  }
-  .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
+  .container {
+    width: 100vw;
+    height: auto;
+    max-height: 95vh;
+    padding: 15px 15px;
+    border-radius: 0;
+    justify-content: flex-start;
   }
 }
