@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Тест: Ошибки человечества</title>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+</head>
+<body>
+<div id="app" class="container">
+  <div id="screen-intro" class="screen active">
+    <h1 class="title">Ошибки человечества</h1>
+    <p class="text intro-text">
+      Они всегда работали слаженно. Слажали и на этот раз! Старый мем, зато годится для темы ошибок.
+      Грандиозных ошибок отдельных людей и корпораций, без которых жить стало бы спокойнее, но как-то более скучно.
+      И это мы сейчас не про ошибки, если что. Ну, а если без черного юмора и старых шуток - ошибки совершают все и если ваш день сегодня не задался,
+      пройдите наш короткий тест и утешьте себя тем, что вы хотя бы не потеряли марсоход из-за сантиметров.
+    </p>
+    <button id="btn-start" class="btn primary-btn">Далее</button>
+  </div>
+
+  <div id="screen-question" class="screen">
+    <div id="question-number" class="question-number"></div>
+    <h2 class="title question-title"></h2>
+    <p class="text question-text"></p>
+    <p id="lead-bold" class="lead-bold"></p>
+    <p id="lead-italic" class="lead-italic"></p>
+    <form id="question-form"></form>
+    <div id="feedback" class="feedback"></div>
+    <button id="btn-next" class="btn primary-btn" style="display:none;">Далее</button>
+  </div>
+
+  <div id="screen-result" class="screen">
+    <h2 class="title">Результат</h2>
+    <p class="text" id="result-text"></p>
+    <button id="btn-restart" class="btn primary-btn">Пройти еще раз</button>
+  </div>
+</div>
+</body>
+</html>

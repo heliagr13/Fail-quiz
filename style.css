@@ -1,0 +1,165 @@
+@font-face { font-family: 'Onder'; src: url('fonts/onder/ONDER-REGULAR.TTF') format('truetype'); }
+@font-face { font-family: 'Fira Sans'; src: url('fonts/fira_sans/FiraSans-Regular.ttf') format('truetype'); }
+
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0; padding: 0; width: 100%; height: 100%;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #4339AC;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 1280px;
+  max-width: 95vw;
+  height: 720px;
+  max-height: 95vh;
+  background-color: #2e2a7d;
+  border-radius: 20px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.screen {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.screen.active {
+  display: flex;
+}
+.title {
+  font-family: 'Onder', serif;
+  font-weight: normal;
+  color: white;
+}
+.text {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.intro-text {
+  font-size: 1.3rem;
+}
+.question-number {
+  font-family: 'Onder', serif;
+  font-size: 0.7rem;
+  margin-bottom: 12px;
+  color: #79D66B;
+}
+.question-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.question-text {
+  margin-bottom: 4px;
+}
+.lead-bold {
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+}
+.lead-italic {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0 0 14px 0;
+}
+.option {
+  display: block;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.option input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.btn {
+  background-color: #79D66B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+.btn:hover:not(:disabled) {
+  background-color: #5cb653;
+}
+.btn:disabled {
+  background-color: #aacd96;
+  cursor: not-allowed;
+}
+
+/* Фидбек на полупрозрачной белой плашке */
+#feedback {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-top: 12px;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  display: none; /* скрываем по умолчанию */
+}
+
+/* Подсветка правильного варианта (зелёный) */
+.option.correct {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  padding-left: 8px;
+}
+
+/* Подсветка неправильного варианта (красный) */
+.option.incorrect {
+  background-color: #F44336;
+  color: white;
+  border-radius: 6px;
+  padding-left: 8px;
+}
+
+/* --- Новый стиль для результата: меняем порядок текста и кнопки --- */
+#screen-result {
+  display: flex;
+  flex-direction: column;
+}
+
+#screen-result > p#detailed-feedback {
+  order: 0; /* текст фидбека первый */
+  margin-bottom: 20px;
+  color: white; /* для контраста с фоном */
+}
+
+#screen-result > button#btn-restart {
+  order: 1; /* кнопка внизу */
+  align-self: flex-start; /* по левому краю */
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+    height: auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .text, .option {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
