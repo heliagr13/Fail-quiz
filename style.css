@@ -1,11 +1,16 @@
 @font-face {
   font-family: 'Onder';
-  src: url('./fonts/onder/ONDER-REGULAR.TTF') format('truetype');
+  src: url('fonts/onder/ONDER-REGULAR.woff2') format('woff2'),
+       url('fonts/onder/ONDER-REGULAR.woff') format('woff'),
+       url('fonts/onder/ONDER-REGULAR.TTF') format('truetype');
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Fira Sans';
-  src: url('./fonts/fira_sans/FiraSans-Regular.ttf') format('truetype');
+  src: url('fonts/fira_sans/FiraSans-Regular.woff2') format('woff2'),
+       url('fonts/fira_sans/FiraSans-Regular.woff') format('woff'),
+       url('fonts/fira_sans/FiraSans-Regular.ttf') format('truetype');
   font-display: swap;
 }
 
