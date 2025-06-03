@@ -1,5 +1,13 @@
-@font-face { font-family: 'Onder'; src: url('fonts/onder/ONDER-REGULAR.TTF') format('truetype'); }
-@font-face { font-family: 'Fira Sans'; src: url('fonts/fira_sans/FiraSans-Regular.ttf') format('truetype'); }
+@font-face {
+  font-family: 'Onder';
+  src: url('./fonts/onder/ONDER-REGULAR.TTF') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('./fonts/fira_sans/FiraSans-Regular.ttf') format('truetype');
+  font-display: swap;
+}
 
 * {
   box-sizing: border-box;
