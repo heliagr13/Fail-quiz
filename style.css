@@ -49,34 +49,53 @@ body, html {
 .screen.active {
   display: flex;
 }
+
 .title {
   font-family: 'Onder', serif;
   font-weight: normal;
   color: white;
   font-size: clamp(1.3rem, 4vw, 2.2rem);
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
-.text {
+
+.text, .intro-text, .question-title, .question-text {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  line-height: 1.4;
-  margin-bottom: 20px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
+
 .intro-text {
   font-size: clamp(1rem, 3vw, 1.3rem);
 }
-.question-number {
-  font-family: 'Onder', serif;
-  font-size: clamp(0.5rem, 1.5vw, 0.7rem);
-  margin-bottom: 12px;
-  color: #79D66B;
-}
+
 .question-title {
   font-size: clamp(1rem, 3vw, 1.4rem);
-  margin-bottom: 10px;
 }
+
 .question-text {
-  margin-bottom: 4px;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: clamp(0.7rem, 4.5vw, 1.1rem);
+  }
+  .text, .intro-text, .question-title, .question-text {
+    font-size: clamp(0.7rem, 4vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(0.5rem, 5vw, 0.9rem);
+  }
+  .text, .intro-text, .question-title, .question-text {
+    font-size: clamp(0.6rem, 4vw, 0.8rem);
+  }
+}
+
 .lead-bold {
   font-weight: bold;
   margin: 0 0 4px 0;
